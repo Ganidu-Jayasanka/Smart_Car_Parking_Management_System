@@ -1,0 +1,56 @@
+﻿/* Style for the report navigation - Ensures horizontal alignment */
+.report-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Ensures the entire HyperLink behaves like a button */
+.report-link {
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+/* Button-like container inside HyperLink */
+.report-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* Button background */
+    color: black; /* Text color set to black */
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    width: 140px;
+    height: 100px; /* Ensures uniform button size */
+}
+
+    /* Hover effect */
+    .report-button:hover {
+        background-color: white;
+        transform: scale(1.05);
+    }
+
+/* Image inside the button */
+.sidebar-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+/* Text inside the button */
+.Setting {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: black; /* Ensure text remains black */
+}

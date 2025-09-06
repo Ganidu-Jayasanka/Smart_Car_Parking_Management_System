@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SCPMSMain.master.cs" Inherits="SCPMS.SCPMSMain" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder></title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            height: calc(100vh - 4rem);
+            transition: width 0.3s ease-in-out;
+        }
+        .sidebar-button {
+            height: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sidebar-button:last-child {
+            border-bottom: none;
+        }
+        .sidebar-open {
+            width: 200px;
+        }
+        .sidebar-closed {
+            width: 60px;
+        }
+        .sidebar-content {
+            display: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .sidebar-open .sidebar-content {
+            display: block;
+            opacity: 1;
+        }
+        .sidebar-closed .sidebar-content {
+            opacity: 0;
+        }
+
+       .background {
+            background-color: #f7e5ff;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="flex flex-col h-screen bg-gray-100">
+    <form runat="server">
+        <!-- Top Header Section -->
+        <header class="bg-white shadow-md h-16 flex items-center border-b border-gray-200">
+            <div class="flex justify-between items-center w-full px-4">
+                <!-- Sidebar and Home Icon -->
+                <div class="flex items-center">
+                    <button id="sidebarToggle" type="button" class="mr-4 text-2xl p-2 hover:bg-gray-100 rounded">☰</button>
+                    <a href="Dashboard.aspx" class="text-2xl p-2 hover:bg-gray-100 rounded">🏠Home</a>
+                    <a href="VMS_Login.aspx" class="text-2xl p-2 hover:bg-gray-100 rounded">👨‍💼VMS</a>
+                </div>
+                
+                <!-- Page Title -->
+                <h1 class="text-2xl font-bold">
+                    <asp:ContentPlaceHolder ID="PageTitleContent" runat="server"></asp:ContentPlaceHolder>
+                </h1>
+                
+                <!-- User Info and Clock -->
+                <div class="flex items-center">
+                    <p class="mr-4">Hi, <asp:Literal ID="lblUserName" runat="server" /></p>
+                    <p id="clock" class="mr-4"></p>
+                    <p class="ml-4"><asp:Literal ID="CurrentDate" runat="server" /></p>
+                    <a href="Login.aspx" class="ml-4 p-2 hover:bg-gray-100 rounded sidebar-button">❌ Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="sidebar bg-white shadow-md overflow-y-auto border-r border-gray-200">
+                <ul>
+                    <li><a href="Dashboard.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">🏠 <span class="sidebar-content">Dashboard</span></a></li>
+                    <li><a href="Entrance.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">🚗 <span class="sidebar-content">Entrance</span></a></li>
+                    <li><a href="Exit.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">🚙 <span class="sidebar-content">Exit</span></a></li>
+                    <li><a href="History.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">📋 <span class="sidebar-content">History</span></a></li>
+                    <li><a href="Slots.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">🗺️ <span class="sidebar-content">Slots</span></a></li>
+                    <li><a href="Report.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">📊 <span class="sidebar-content">Report</span></a></li>
+                    <li><a href="Settings.aspx" class="sidebar-button flex items-center px-4 py-2 hover:bg-gray-100">⚙️ <span class="sidebar-content">Settings</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6 overflow-y-auto background">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </form>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        // Check if the sidebar is open or closed from local storage
+        const isSidebarOpen = localStorage.getItem('sidebarOpen') === 'true';
+        if (isSidebarOpen) {
+            sidebar.classList.add('sidebar-open');
+        } else {
+            sidebar.classList.add('sidebar-closed');
+        }
+
+        sidebarToggle.addEventListener('click', () => {
+            if (sidebar.classList.contains('sidebar-closed')) {
+                sidebar.classList.remove('sidebar-closed');
+                sidebar.classList.add('sidebar-open');
+                localStorage.setItem('sidebarOpen', 'true'); // Store open state
+            } else {
+                sidebar.classList.remove('sidebar-open');
+                sidebar.classList.add('sidebar-closed');
+                localStorage.setItem('sidebarOpen', 'false'); // Store closed state
+            }
+        });
+
+        // Real-time clock display
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);  // Update clock every second
+
+        // Set current date on page load
+        const currentDate = new Date().toLocaleDateString();
+        document.getElementById('<%= CurrentDate.ClientID %>').textContent = currentDate;
+    </script>
+
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

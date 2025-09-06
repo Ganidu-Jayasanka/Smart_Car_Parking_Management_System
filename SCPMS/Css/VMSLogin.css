@@ -1,0 +1,145 @@
+﻿/* Global styling for the body, including font, background, and centering content */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #0094ff, #00ffff);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Container styling that wraps all page content */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect for the container */
+}
+/* Navigation bar styling with buttons for SCPMS and VMS */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0026ff;
+    padding: 10px 20px;
+}
+    /* Styling for navigation buttons */
+    .navigation button {
+        font-size: 1rem;
+        color: #fff;
+        background-color: #0094ff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+        /* Hover effect for navigation buttons */
+        .navigation button:hover {
+            background-color: #b200ff;
+        }
+/* Layout for content section, splitting into features and login */
+.content {
+    display: flex;
+    flex: 1;
+}
+/* Features section styling, with image and overlay text */
+.features {
+    flex: 2;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+    /* Styling for the image inside the features section */
+    .features img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+/* Overlay content on the features section */
+.features-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    /* Styling for the title inside the features section */
+    .features-content h1 {
+        font-size: 2.3rem;
+        height: 300px;
+    }
+/* Login section styling, with a form for username and password */
+.login-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    /* Logo image styling in the login section */
+    .login-section img {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    /* Header for the login section */
+    .login-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+/* Form group styling for input fields */
+.form-group {
+    margin-bottom: 20px;
+}
+    /* Label styling for form fields */
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    /* Input field styling */
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+/* Styling for form action buttons like login */
+.form-actions {
+    margin-top: 10px;
+}
+/* Styling for the login button */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #0026ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    /* Hover effect for the login button */
+    .btn:hover {
+        background-color: #b200ff;
+    }
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}

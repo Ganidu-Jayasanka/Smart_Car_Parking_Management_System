@@ -1,0 +1,97 @@
+﻿
+/* General Body Styling */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the content */
+.container {
+    max-width: 800px;
+}
+
+/* Card Design */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body */
+.card-body {
+    padding: 30px;
+    background-color: #fff;
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 32px;
+    color: #343a40;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 20px;
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Dropdown styling */
+select.form-control {
+    border-radius: 5px;
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Table Styling for GridView */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    /* Table Rows and Borders */
+    .table th, .table td {
+        text-align: left;
+        padding: 12px 15px;
+    }
+
+    .table th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #f8f9fa;
+    }
+
+    .table tbody tr:hover {
+        background-color: #e2e6ea;
+    }
+
+/* CheckBox Styling */
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* Button Styling */
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #218838;
+    }
+
+.btn-success {
+    background-color: #28a745;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+ 

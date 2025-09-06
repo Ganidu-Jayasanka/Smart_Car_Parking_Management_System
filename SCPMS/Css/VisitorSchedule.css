@@ -1,0 +1,33 @@
+﻿.section-header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.section-header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+.border-table {
+    border: 1px solid #ddd;
+    width: 100%;
+    text-align: left;
+}
+
+    .border-table th, .border-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }

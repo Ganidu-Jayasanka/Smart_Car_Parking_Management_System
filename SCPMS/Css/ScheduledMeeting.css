@@ -1,0 +1,77 @@
+﻿.section-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+    .filter-container label {
+        font-weight: bold;
+    }
+
+    .filter-container input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 180px;
+    }
+
+    .filter-container .btn-filter {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .filter-container .btn-filter:hover {
+            background-color: #218838;
+        }
+
+.border-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+    .border-table th {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .border-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+.table-container {
+    width: 100%;
+    max-height: none; /* Prevent scroll for fewer records */
+}
+
+.gridview-pagination {
+    text-align: center;
+    margin-top: 10px;
+}

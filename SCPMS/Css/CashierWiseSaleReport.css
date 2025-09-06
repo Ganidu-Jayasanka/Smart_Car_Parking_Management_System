@@ -1,0 +1,116 @@
+﻿.section-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .filter-container label {
+        font-weight: bold;
+    }
+
+    .filter-container input, .filter-container select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 200px;
+    }
+
+    .filter-container .btn-filter {
+        background-color: #ffc107; /* Yellow color for View button */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .filter-container .btn-filter:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+        }
+
+.border-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+    .border-table th, .border-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .border-table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+.table-container {
+    overflow-x: auto;
+    max-height: 600px;
+    width: 100%;
+}
+
+.report-header {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-export-excell {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-export-pdf {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-export-excell {
+    background-color: #28a745; /* Green color for Excel button */
+    color: white;
+    border: none;
+}
+
+    .btn-export-excell:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+.btn-export-pdf {
+    background-color: #d9534f; /* Red (brownish) color for PDF button */
+    color: white;
+    border: none;
+}
+
+    .btn-export-pdf:hover {
+        background-color: #c9302c; /* Darker red on hover */
+    }

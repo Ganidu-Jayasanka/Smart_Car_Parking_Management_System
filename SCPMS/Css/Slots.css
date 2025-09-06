@@ -1,0 +1,96 @@
+﻿.gridview1 {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .gridview1 th, .gridview1 td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .gridview1 th {
+        background-color: #e0e0e0;
+        color: #444;
+    }
+
+    .gridview1 tr:hover {
+        background-color: #e9e9e9;
+    }
+
+    .gridview1 tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    .gridview1 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+/* Parking slot nav bar styles */
+
+nav ul .sidebar-button-slot {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    justify-content: space-around; /* Adds equal space between buttons */
+    align-items: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Makes buttons stretch equally */
+    margin: 0 10px; /* Adds space between buttons */
+}
+
+    nav ul .sidebar-button-slot:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+/* Specific button colors */
+.sidebar-button-slot.A {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-button-slot.B {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-button-slot.C {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-button-slot.D {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-button-slot.E {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar-button-slot.F {
+    background-color: #07bff7;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.ParkingSlotLbl {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0; /* Adds some space around the label */
+}
